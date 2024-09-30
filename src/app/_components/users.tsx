@@ -2,7 +2,7 @@
 
 import { api } from "~/trpc/react"
 
-const users = () => {
+const Users = () => {
     const user = api.post.getusers.useQuery()
 
     return (
@@ -10,4 +10,4 @@ const users = () => {
     )
 }
 
-export default users
+export default Users
