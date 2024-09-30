@@ -10,6 +10,14 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+
+ model User { 
+        clerkId  String @unique
+        email   String
+        username String 
+    }
+
+
 model Post {
     id        Int      @id @default(autoincrement())
     name      String

@@ -25,7 +25,14 @@ export const postRouter = createTRPCRouter({
     const post = await ctx.db.post.findFirst({
       orderBy: { createdAt: "desc" },
     });
-
     return post ?? null;
+  }),
+
+  getusers: publicProcedure.query(async ({ ctx }) => {
+    
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    const user = await ctx?.db?.user?.findMany({});
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return user ?? null;
   }),
 });
